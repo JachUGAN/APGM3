@@ -1,0 +1,53 @@
+<% provide(:title, 'Home')%>
+<!DOCTYPE html>				<!--NOTE: Not sure i need it since it already exists in the main app layout-->
+<html>
+<head>
+	<meta charset="utf-8" />
+</head>
+
+
+<body>
+	
+	<!--header file contained in layout -->
+	<div class="hero-unit">
+		<h1>Welcome to the APGM website</h1>
+		<small>Work in Progress</small>
+	</div>
+
+	<div class="row">
+		  <div class="span12">
+		  
+		  
+		    <div class="row">
+		      <div class="span9">
+
+						<%= render "shared/showposts" %>
+
+						<% if can? :create, Post %>
+				    	<h4><%=link_to "New Post", new_post_path, class: "btn btn-small btn-primary" %>	</h4>	<!--the = is only used when we want to display something-->
+				    <% end %>
+					
+					</div>
+
+		      <div class="span3">
+		      	
+		      	<div class="eventsaside">
+		      		<h4 class="EventTitle">Events</h4>
+
+		      		<%= render "shared/showevents" %>		<!--Displays all the events that are in the partial-->
+
+			      	<% if can? :create, Event %>
+			      		<h4><%=link_to "New Event", newevent_path, class: "btn btn-small btn-primary" %>	</h4>
+			      	<% end %>
+
+		      	</div>
+		      	
+		      </div>
+		    
+		    </div>
+		  </div>
+		</div>
+
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+@import "bootstrap";
+
+@mixin box_sizing {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+
+$grayMediumLight: #eaeaea;
+
+/* universal */
+* {
+	margin: 0;
+}
+
+html, body {
+height: 100%;
+}
+
+html {
+	overflow-y: scroll;
+	//border: 1px solid red;	/*for testing purposes*/
+}
+
+body {
+	//border-width: 1024px;
+	//border: 1px solid green;	/*for testing purposes*/
+	
+}
+
+section {
+	overflow: auto;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.container {
+	width: 1024px;
+	height: auto;
+
+}
+
+.navbar .container {
+	width: 1024px;
+}
+
+.center {			/*associates the center class with the text-align: center property. In other words,the dot . in .center indicates that the rule styles a class*/
+	
+	text-align: center;
+
+}
+
+.title {
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+.center h1 {
+	margin-bottom: 10px;
+}
+
+/************************************************************/
+
+.loginBtn {
+	float: right;
+	margin-right: 10px;
+}
+
+.navbar-inner {
+  background-color: #333333;
+  background-image: none;		/*it seems boostrap uses a backgound image*/
+  background-repeat: no-repeat;
+  filter: none;
+  height: 40px; 	
+
+}
+
+.btn-login {
+	font-size: 14px;
+	font-weight: bold;
+	background-color: white;
+	width: 80px;
+	//position: relative;
+	padding-top: 6px;
+
+}
+
+/*Upper Menu*/
+
+.nav {
+	//display: inline-block;
+	width: 1024px;				//DOESNT WORK :(
+	//margin-left: -50px;
+	//border: 1px solid white;	/*for testing purposes*/
+}
+
+.navbar .nav > li > a {
+		color: white;
+    padding: 7px 15px;
+    /*padding: 5px 15px;*/
+    text-decoration: none;
+    text-shadow: none;
+    font-family: "Verdana", Helvetica, Arial, sans-serif;
+		font-size: 14px;
+
+    }	/* Gives the li a white color xD*/
+
+
+.navbar .nav > li > a:hover {	
+
+	background-color: transparent;
+	color: #777777;
+	text-decoration: none;
+}
+
+/**********************************/
+
+.navbar .nav > li > a:active {			
+	color: #777777;			//NOT WORKING
+}
+
+.title {
+	//display: inline-block;	
+	color: white;
+	padding: 0px;
+	border: 1px solid white;
+
+}
+
+/*Profile Dropdown Menu ***************************************/
+
+.dropdown-menu {
+	//position: absolute;
+	padding: 0px 0;
+	margin: 13px 0 0	;
+	background-color: white;
+	left: -0px;
+	min-width: 150px;
+	list-style: none outside none;
+
+}
+
+.dropdown-menu > li > a {
+	display: inline-block;
+	padding: 3px 5px;
+	line-height: 15px;
+	min-width: 107px;
+	padding: 5px 20px;
+  white-space: nowrap;
+}
+
+
+.dropdown-menu .divider {			/*Divider is not yet working :/*/
+    background-color: #E5E5E5;
+    height: 1px;
+    margin: 9px 0;
+    //overflow: hidden;
+}
+/****************************************************************/
+
+/* forms (new user, new article)*/
+input, textarea, select, .uneditable-input {
+	border: 1px solid #bbb;
+	width: 100%;
+	padding: 10px;
+	height: auto;
+	margin-bottom: 15px;
+	@include box_sizing;
+}
+
+#error_explanation {
+	color: #f00;
+	ul {
+	list-style: none;
+	margin: 0 0 18px 0;
+	}
+}
+
+.field_with_errors {
+	@extend .control-group;
+	@extend .error;
+}
+
+
+/*User List Page*/;
+.UserTable {
+	text-align: center;
+	border-collapse:collapse;
+	td {
+				width: 120px;
+	}
+}
+
+.UserHeaderTable 	{
+	//text-align: left;
+	border-collapse:collapse;
+	th {
+				width: 120px;
+	}
+}
+
+
+/*Hero Unit*/
+
+.hero-unit {
+	background-color: #EEEEEE;
+  border-radius: 6px 6px 6px 6px;
+  color: inherit;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  i {
+  	font-size: 12px;
+  }
+}
+
+/* Articles */
+
+#ArticleBreakLine {
+	font-size: 50px;
+}
+
+/* Events */
+
+.EventTitle {
+	color: #0088cc;
+}
+
+ul {
+    list-style: none outside none;
+}
+ul, ol {
+    margin: 0 0 9px 25px;
+    padding: 0;
+}
+
+ul li{
+  display: inline;
+  margin: 2px;
+}
+
+
+/*User Profile */
+.UserAvatar {
+	display: block;
+}
+.UserInfo {
+	display: inline-block;
+	font-size: 20px;
+}
+
+.profile {
+    td {
+    	padding: 10px;
+    	text-align: left;
+    	}
+    th {
+    	text-align: left;
+    }
+    
+}
+
+/*Events*/
+
+
+.eventsaside {				/*I'll HAVE TO TIDY THIS UP AFTER THE EVENTS CONTROLLER IS IMPLEMENTED*/
+border-left: 2px solid #eeeeee;
+border-color: #eeeeee;
+width: 100%;
+height: auto;
+padding-left: 15px;
+height: auto;
+min-height: 400px; 
+}
+
+/*Wrap Unit*/
+
+
+#wrap {
+		min-height: 100%;	
+		height: auto !important;
+    margin: 0 auto -46px;
+    height: 100%;	
+    //border: 1px solid blue;	/*for testing purposes*/
+}
+
+
+/*Footer*/
+
+.footer, .push {
+height: 40px;
+
+}
+
+footer {		 /*Fully Nested*/
+	//border: 1px solid black;	/*for testing purposes*/
+	padding-top: 5px;
+	border-top: 1px solid $grayMediumLight;
+	color: $grayLight;
+	a {
+		color: $gray;
+		}
+	small {
+		float: left;
+}
+ul {
+	float: right;
+	list-style: none;
+
+	li {
+		float: left;
+		margin-left: 10px;
+	}
+}
+}
+
