@@ -38,9 +38,13 @@ gem 'bootstrap-sass', '2.3.2.1'
 gem 'annotate', '2.5.0'
 gem 'validates_timeliness'
 gem 'cancan', '1.6.10'
-gem 'tinymce-rails', '4.0.2' 
+gem 'tinymce-rails', '4.0.10' 
 gem 'rails_12factor'
 gem 'devise', '3.0.1'
+#Instal the figaro gem to set Environment variables
+gem 'figaro'	
+#Install tableless models	
+gem 'active_attr'
 ####################
 
 

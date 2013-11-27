@@ -6,13 +6,14 @@ APGM2::Application.routes.draw do
   #resources :sessions, only: [:new, :create, :destroy]    #we don't nees the edit and show actions
   resources :users
   resources :events
+  resources :emails
 
   root 'posts#home'
 
   match '/new_post', to: 'posts#new', via: 'get'
 
   
-  match '/contact', to: 'posts#contact', via: 'get'
+  match '/contact', to: 'emails#new', via: 'get'
  
   match '/edit_post', to: 'posts#edit', via: 'get'
 

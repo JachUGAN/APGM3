@@ -51,6 +51,7 @@ class EventsController < ApplicationController
 		
 	end
 
+	private
 	def event_params
 		params.require(:event).permit(:end_date, :start_date, :title)		#User_id should not be accessible
 	end

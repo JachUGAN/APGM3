@@ -1,0 +1,24 @@
+<% provide(:title, 'Contact')%>
+<h1>Contact</h1>
+
+<div class="row">
+  <div class="span9 offset0">
+    <div class="hero-unit">
+    <%= form_for(@email) do |f| %>
+    <%= render 'shared/error_messages_emails' %>
+    <%= f.label "Your Name" %>
+    <%= f.text_field :sendername, placeholder: "Enter Your Name.." %> 
+    <%= f.label "Your Email" %>
+    <%= f.text_field :senderemail, placeholder: "Enter Your Email.." %>   
+    <%= f.label "Your Message" %>
+    <%= f.text_area :emailcontent, placeholder: "Enter Your Message..(Max 500 letters)" %>
+
+    <br />
+    <%= f.submit "Send your Message", class: "btn btn-small btn-primary" %>
+    
+    <% end %>
+    </div>
+
+</div>
+
+</div>
